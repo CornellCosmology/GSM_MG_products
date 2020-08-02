@@ -965,7 +965,7 @@ LSM::setupQR(const char fname[]) {
     //Q12spl.init(ka,Q12);
     //Q13spl.init(ka,Q13);
 
-    std::ifstream fsQ("./plin_Fr6z05wmap9_cleftQnew_z000.txt");
+    std::ifstream fsQ("plin_Fr6z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_Fr5z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_N1z05wmap9_cleftQ0_z000.txt");
     //std::ifstream fsQ("./Q_zeros.txt");
@@ -989,7 +989,7 @@ LSM::setupQR(const char fname[]) {
     Qsspl.init(ka,Qs);
     QIspl.init(ka,QI);
     
-    std::ifstream fsR("./pplin_Fr6z05wmap9_cleftRnew_z000.txt");
+    std::ifstream fsR("plin_Fr6z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_Fr5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
@@ -1019,7 +1019,7 @@ LSM::setupQR(const char fname[]) {
     std::vector<double> Q1prime(NkTemp),Q2prime(NkTemp),Q5prime(NkTemp),Q8prime(NkTemp),Q3prime(NkTemp);
     std::vector<double> Qsprime(NkTemp),QIprime(NkTemp),R12prime(NkTemp),RIprime(NkTemp), Q1halfprime(NkTemp) ;   
     //std::ifstream fsQder("./ps_python3/plin_N5z05wmap9_cleftQnewDer_z000.txt");
-    std::ifstream fsQder("./plin_Fr6z05wmap9_cleftQnewDer_z000.txt");
+    std::ifstream fsQder("plin_Fr6z05wmap9_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_Fr5z05wmap9_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_Fr5z1planck_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_N1z05wmap9_cleftQ0_z000.txt");
@@ -1047,7 +1047,7 @@ LSM::setupQR(const char fname[]) {
     Q1halfprimespl.init(kaprime,Q1halfprime);
 
     //std::ifstream fsRder("./ps_python3/plin_N5z05wmap9_cleftRnewDer_z000.txt");    
-    std::ifstream fsRder("./plin_Fr6z05wmap9_cleftRnewDer_z000.txt");
+    std::ifstream fsRder("plin_Fr6z05wmap9_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_Fr5z05wmap9_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_Fr5z1planck_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
@@ -1068,7 +1068,7 @@ LSM::setupQR(const char fname[]) {
     RIprimespl.init(kaRprime,RIprime);
 
     //std::ifstream grth("./fgrowth_N5z05wmap9.txt");
-    std::ifstream grth("./fgrowth_Fr6z05wmap9.txt");
+    std::ifstream grth("fgrowth_Fr6z05wmap9.txt");
     //std::ifstream grth("./fgrowth_Fr5z05wmap9.txt");
     //std::ifstream grth("./fgrowth_Fr5z1planck.txt");
 
