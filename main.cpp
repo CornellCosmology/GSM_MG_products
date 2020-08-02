@@ -62,10 +62,10 @@ int	main(int argc, char **argv)
     //lsm.printXiStuffRSD("text.txt");
     //const int Nr=61; //Default settings
     //const double rmin=5.0,rmax=135;
-    //const int Nr=140;
-    const int Nr=380;
-    //const double rmin=0.5,rmax=139.5;
-    const double rexpmin=log(0.001),rexpmax=log(600);
+    const int Nr=140;
+    //const int Nr=380;
+    const double rmin=0.5,rmax=139.5;
+    //const double rexpmin=log(0.001),rexpmax=log(600);
     //const int Nr=35;
     //const double rmin=25.,rmax=599.;
     //const double rexpmin=log(25.),rexpmax=log(599.);
@@ -110,9 +110,9 @@ int	main(int argc, char **argv)
     //std::ofstream fs("xihexaGSMF5z1simbin1.txt");
     //std::ofstream fs("xihexaGSMN5z05EFT.txt");
     for (int i=0; i<Nr; ++i) {
-      //double rr = rmin + i*(rmax-rmin)/(Nr-1);
+      double rr = rmin + i*(rmax-rmin)/(Nr-1);
       //logarithmic binning
-      double rr = rexpmin + i*(rexpmax-rexpmin)/(Nr-1);
+      //double rr = rexpmin + i*(rexpmax-rexpmin)/(Nr-1);
       rr = exp(rr);
         if (ngrav==0){
            xiell=lsm.xiEll(rr,s2FoG,Apar,Aperp);
