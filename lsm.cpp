@@ -965,10 +965,10 @@ LSM::setupQR(const char fname[]) {
     //Q12spl.init(ka,Q12);
     //Q13spl.init(ka,Q13);
 
-    //std::ifstream fsQ("./ps_python3/plin_Fr6z05wmap9_cleftQnew_z000.txt");
+    std::ifstream fsQ("./ps_python3/plin_Fr6z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_Fr5z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_N1z05wmap9_cleftQ0_z000.txt");
-    std::ifstream fsQ("./Q_zeros.txt");
+    //std::ifstream fsQ("./Q_zeros.txt");
     //std::ifstream fsQ("./Qfuncs.txt");
     //std::ifstream fsQ("./ps_python3/plin_N5z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_z05wmap9_cleftQnew_z000.txt");
@@ -989,11 +989,11 @@ LSM::setupQR(const char fname[]) {
     Qsspl.init(ka,Qs);
     QIspl.init(ka,QI);
     
-    //std::ifstream fsR("./ps_python3/plin_Fr6z05wmap9_cleftRnew_z000.txt");
+    std::ifstream fsR("./ps_python3/plin_Fr6z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_Fr5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
-    std::ifstream fsR("./R_zeros.txt");
+    //std::ifstream fsR("./R_zeros.txt");
     //std::ifstream fsR("./Rfuncs.txt");
 
     //std::ifstream fsR("./ps_python3/plin_z05wmap9_cleftRnew_z000.txt");
@@ -1019,20 +1019,20 @@ LSM::setupQR(const char fname[]) {
     std::vector<double> Q1prime(NkTemp),Q2prime(NkTemp),Q5prime(NkTemp),Q8prime(NkTemp),Q3prime(NkTemp);
     std::vector<double> Qsprime(NkTemp),QIprime(NkTemp),R12prime(NkTemp),RIprime(NkTemp), Q1halfprime(NkTemp) ;   
     //std::ifstream fsQder("./ps_python3/plin_N5z05wmap9_cleftQnewDer_z000.txt");
-    //std::ifstream fsQder("./ps_python3/plin_Fr6z05wmap9_cleftQnewDer_z000.txt");
+    std::ifstream fsQder("./ps_python3/plin_Fr6z05wmap9_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_Fr5z05wmap9_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_Fr5z1planck_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_N1z05wmap9_cleftQ0_z000.txt");
-    std::ifstream fsQder("./Q_zeros.txt");
+    //std::ifstream fsQder("./Q_zeros.txt");
     //std::ifstream fsQder("./Qfuncs.txt");
     //std::ifstream fsQder("./Qdotfuncs.txt");
     for (int i=0; i<NkTemp; ++i) {
       std::string ssQder;
       getline(fsQder,ssQder);
                //std::istringstream(ssQ) >> ka[i] >> Q1[i] >> Q2[i] >> Q3[i] >> Q5[i] >> Q8[i] >> Qs[i];  
-              // std::istringstream(ssQder) >> kaprime[i] >> Q1prime[i] >> Q2prime[i] >> Q3prime[i] >> Q5prime[i] >> Q8prime[i] >> Qsprime[i] >> QIprime[i] >> Q1halfprime[i];
+               std::istringstream(ssQder) >> kaprime[i] >> Q1prime[i] >> Q2prime[i] >> Q3prime[i] >> Q5prime[i] >> Q8prime[i] >> Qsprime[i] >> QIprime[i] >> Q1halfprime[i];
           // Switching to new format to import from Alejandos code. Old format above.
-             std::istringstream(ssQder) >> kaprime[i] >> Q1prime[i] >> Q2prime[i] >> Q5prime[i] >> Q8prime[i] >> QIprime[i] >> Q1halfprime[i];
+          //   std::istringstream(ssQder) >> kaprime[i] >> Q1prime[i] >> Q2prime[i] >> Q5prime[i] >> Q8prime[i] >> QIprime[i] >> Q1halfprime[i];
                //std::cout << QI[i] << std::endl;
     }
     fsQder.close();
@@ -1047,11 +1047,11 @@ LSM::setupQR(const char fname[]) {
     Q1halfprimespl.init(kaprime,Q1halfprime);
 
     //std::ifstream fsRder("./ps_python3/plin_N5z05wmap9_cleftRnewDer_z000.txt");    
-    //std::ifstream fsRder("./ps_python3/plin_Fr6z05wmap9_cleftRnewDer_z000.txt");
+    std::ifstream fsRder("./ps_python3/plin_Fr6z05wmap9_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_Fr5z05wmap9_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_Fr5z1planck_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
-    std::ifstream fsRder("./R_zeros.txt");
+   // std::ifstream fsRder("./R_zeros.txt");
     //std::ifstream fsRder("./Rfuncs.txt");
     //std::ifstream fsRder("./Rdotfuncs.txt"); //Importing from Alejandro's code.
     for (int i=0; i<NkTemp; ++i) {
@@ -1068,14 +1068,14 @@ LSM::setupQR(const char fname[]) {
     RIprimespl.init(kaRprime,RIprime);
 
     //std::ifstream grth("./fgrowth_N5z05wmap9.txt");
-    //std::ifstream grth("./fgrowth_Fr6z05wmap9.txt");
+    std::ifstream grth("./fgrowth_Fr6z05wmap9.txt");
     //std::ifstream grth("./fgrowth_Fr5z05wmap9.txt");
     //std::ifstream grth("./fgrowth_Fr5z1planck.txt");
 
-    std::stringstream ss;
-    ss<<"fgrowth_"<< fname;
-    //std::cout<<ss.str().c_str()<<std::endl;
-    std::ifstream grth(ss.str().c_str());
+    //std::stringstream ss;
+    //ss<<"fgrowth_"<< fname;
+    
+    //std::ifstream grth(ss.str().c_str());
 
     const int NkTempgrowth=2000;
     std::vector<double> kgrowth(NkTempgrowth), fgrowth(NkTempgrowth);
@@ -1088,32 +1088,6 @@ LSM::setupQR(const char fname[]) {
     //And spline the new functions
     fgrowthspl.init(kgrowth,fgrowth);
     //std::cout  << "here" << std::endl;
-    //
-    //George's part-store Q's
-    //std::ofstream storefs("White_kfunc.txt",std::ios::trunc);
-    //for (int i=1; i<NkTemp; ++i)
-    //
-    //  storefs << std::scientific << std::setw(20) << std::setprecision(9) << ka[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q1[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q2[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q3[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q4[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q5[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q6[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q7[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q8[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q9[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q10[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q11[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q12[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << Q13[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << R1[i]
-    //          << std::scientific << std::setw(20) << std::setprecision(9) << R2[i]
-    //          << std::endl;
-    //storefs.close();
-    //end of George's part
-   //std::cout << NkTemp << std::endl;
-
 
 }
 
