@@ -66,10 +66,11 @@ Zeldovich::readPowerSpectrum(const char fname[]) {
     dkinv = NkTable/(kLin[NkTable-1]-kLin[0]);
 
     //extra part added by George
-    std::stringstream sss;
-    sss<<"fgrowth_"<< fname;
+    //std::stringstream sss;
+    //sss<<"fgrowth_"<< fname;
     //std::cout<<ss.str().c_str()<<std::endl;
-    std::ifstream grths(sss.str().c_str());
+    //std::ifstream grths(sss.str().c_str());
+    std::ifstream grths("fgrowth_Fr6z05wmap9.txt");
 
     const int NkTempgrowth2=2000;
     std::vector<double> kgrowth2(NkTempgrowth2), fgrowth2(NkTempgrowth2);
