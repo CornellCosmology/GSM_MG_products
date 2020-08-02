@@ -989,7 +989,7 @@ LSM::setupQR(const char fname[]) {
     Qsspl.init(ka,Qs);
     QIspl.init(ka,QI);
     
-    std::ifstream fsR("./plin_Fr6z05wmap9_cleftRnew_z000.txt");
+    std::ifstream fsR("./pplin_Fr6z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_Fr5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
