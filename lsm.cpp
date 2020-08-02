@@ -965,7 +965,7 @@ LSM::setupQR(const char fname[]) {
     //Q12spl.init(ka,Q12);
     //Q13spl.init(ka,Q13);
 
-    std::ifstream fsQ("./plin_Fr6z05wmap9_cleftQnew_z000.txt");
+    std::ifstream fsQ("plin_Fr6z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_Fr5z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_N1z05wmap9_cleftQ0_z000.txt");
     //std::ifstream fsQ("./Q_zeros.txt");
@@ -978,7 +978,7 @@ LSM::setupQR(const char fname[]) {
       getline(fsQ,ssQ);
                //std::istringstream(ssQ) >> ka[i] >> Q1[i] >> Q2[i] >> Q3[i] >> Q5[i] >> Q8[i] >> Qs[i];  
                std::istringstream(ssQ) >> ka[i] >> Q1[i] >> Q2[i] >> Q3[i] >> Q5[i] >> Q8[i] >> Qs[i] >> QI[i] >> Q7[i] >> Q9[i] >> Q11[i] >> Q12[i] >> Q13[i];                          
-               std::cout << Q1[i] << std::endl;
+              // std::cout << QI[i] << std::endl;
     }
     fsQ.close();
     // std::cout << NkTemp << std::endl;
@@ -989,7 +989,7 @@ LSM::setupQR(const char fname[]) {
     Qsspl.init(ka,Qs);
     QIspl.init(ka,QI);
     
-    std::ifstream fsR("./plin_Fr6z05wmap9_cleftRnew_z000.txt");
+    std::ifstream fsR("plin_Fr6z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_Fr5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
@@ -1019,7 +1019,7 @@ LSM::setupQR(const char fname[]) {
     std::vector<double> Q1prime(NkTemp),Q2prime(NkTemp),Q5prime(NkTemp),Q8prime(NkTemp),Q3prime(NkTemp);
     std::vector<double> Qsprime(NkTemp),QIprime(NkTemp),R12prime(NkTemp),RIprime(NkTemp), Q1halfprime(NkTemp) ;   
     //std::ifstream fsQder("./ps_python3/plin_N5z05wmap9_cleftQnewDer_z000.txt");
-    std::ifstream fsQder("./plin_Fr6z05wmap9_cleftQnewDer_z000.txt");
+    std::ifstream fsQder("plin_Fr6z05wmap9_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_Fr5z05wmap9_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_Fr5z1planck_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_N1z05wmap9_cleftQ0_z000.txt");
@@ -1047,7 +1047,7 @@ LSM::setupQR(const char fname[]) {
     Q1halfprimespl.init(kaprime,Q1halfprime);
 
     //std::ifstream fsRder("./ps_python3/plin_N5z05wmap9_cleftRnewDer_z000.txt");    
-    std::ifstream fsRder("./plin_Fr6z05wmap9_cleftRnewDer_z000.txt");
+    std::ifstream fsRder("plin_Fr6z05wmap9_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_Fr5z05wmap9_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_Fr5z1planck_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
@@ -1068,7 +1068,7 @@ LSM::setupQR(const char fname[]) {
     RIprimespl.init(kaRprime,RIprime);
 
     //std::ifstream grth("./fgrowth_N5z05wmap9.txt");
-    std::ifstream grth("./fgrowth_Fr6z05wmap9.txt");
+    std::ifstream grth("fgrowth_Fr6z05wmap9.txt");
     //std::ifstream grth("./fgrowth_Fr5z05wmap9.txt");
     //std::ifstream grth("./fgrowth_Fr5z1planck.txt");
 
@@ -2419,63 +2419,63 @@ LSM::init(const char fname[], const double f,
     //Importing xi, sigma, v12 from simulations and getting splines for them 
 
     //std::ifstream xiN("/home/astrosun2/gvalogiannis/swot-1.1.0/xilightF5z1_bin1160.out");
-    //std::ifstream xiN("./xiF6sim160.txt");
+    std::ifstream xiN("./xiF6sim160.txt");
     //const int Nksim=30;
-    //const int Nksim=160;
-    //std::vector<double> rxisim(Nksim), xisim(Nksim), dum(Nksim);
-    //for (int i=0; i<Nksim; ++i) {
-    //         std::string sxiN;
-    //         getline(xiN,sxiN);
-    //           std::istringstream(sxiN) >> rxisim[i] >> xisim[i] >> dum[i] >> dum[i];
-    //           xisim[i] *= rxisim[i]*rxisim[i];
+    const int Nksim=160;
+    std::vector<double> rxisim(Nksim), xisim(Nksim), dum(Nksim);
+    for (int i=0; i<Nksim; ++i) {
+             std::string sxiN;
+             getline(xiN,sxiN);
+               std::istringstream(sxiN) >> rxisim[i] >> xisim[i] >> dum[i] >> dum[i];
+               xisim[i] *= rxisim[i]*rxisim[i];
               //std::cout << rxisim[i] << xisim[i] << std::endl; 
-  //  }
-  //  xiN.close();
+    }
+    xiN.close();
     //And spline the new functions
-  //  xisimspl.init(rxisim,xisim);
+    xisimspl.init(rxisim,xisim);
 
     //std::ifstream v12N("/home/astrosun2/gvalogiannis/swot-1.1.0/velF5bin1160_1.out");
-  ///  std::ifstream v12N("./velF6sim160.txt");
+    std::ifstream v12N("./velF6sim160.txt");
     //const int Nksim=30;
-  //  std::vector<double> rv12sim(Nksim), v12sim(Nksim);
-  //  for (int i=0; i<Nksim; ++i) {
-  //           std::string sv12N;
-  //           getline(v12N,sv12N);
-  //             std::istringstream(sv12N) >> rv12sim[i] >> v12sim[i] >> dum[i] >> dum[i];
+    std::vector<double> rv12sim(Nksim), v12sim(Nksim);
+    for (int i=0; i<Nksim; ++i) {
+             std::string sv12N;
+             getline(v12N,sv12N);
+               std::istringstream(sv12N) >> rv12sim[i] >> v12sim[i] >> dum[i] >> dum[i];
               //std::cout << v12sim[i] << std::endl; 
-  //  }
-  //  v12N.close();
+    }
+    v12N.close();
     //And spline the new functions
-  //  v12simspl.init(rv12sim,v12sim);
+    v12simspl.init(rv12sim,v12sim);
 
     //std::ifstream sigpN("/home/astrosun2/gvalogiannis/swot-1.1.0/sigparF5bin1160.out");
-  //  std::ifstream sigpN("./sigparF6sim160.txt");
+    std::ifstream sigpN("./sigparF6sim160.txt");
     //const int Nksim=30;
-  //  std::vector<double> rsigparsim(Nksim), sigparsim(Nksim);
-  //  for (int i=0; i<Nksim; ++i) {
-  //           std::string ssigpN;
-  //           getline(sigpN,ssigpN);
-  //             std::istringstream(ssigpN) >> rsigparsim[i] >> sigparsim[i] >> dum[i] >> dum[i];
+    std::vector<double> rsigparsim(Nksim), sigparsim(Nksim);
+    for (int i=0; i<Nksim; ++i) {
+             std::string ssigpN;
+             getline(sigpN,ssigpN);
+               std::istringstream(ssigpN) >> rsigparsim[i] >> sigparsim[i] >> dum[i] >> dum[i];
               //std::cout << sigparsim[i] << std::endl; 
              //sigparsim[i] -= v12sim[i]*v12sim[i];
-  //  }
-  //  sigpN.close();
+    }
+    sigpN.close();
     //And spline the new functions
-  //  sigparsimspl.init(rsigparsim,sigparsim);
+    sigparsimspl.init(rsigparsim,sigparsim);
 
     //std::ifstream sigperN("/home/astrosun2/gvalogiannis/swot-1.1.0/sigperpF5bin1160.out");
-   // std::ifstream sigperN("./sigperpF6sim160.txt");
+    std::ifstream sigperN("./sigperpF6sim160.txt");
     //const int Nksim=30;
-   // std::vector<double> rsigperpsim(Nksim), sigperpsim(Nksim);
-   // for (int i=0; i<Nksim; ++i) {
-   //          std::string ssigperN;
-   //          getline(sigperN,ssigperN);
-   //            std::istringstream(ssigperN) >> rsigperpsim[i] >> sigperpsim[i] >> dum[i] >> dum[i];
+    std::vector<double> rsigperpsim(Nksim), sigperpsim(Nksim);
+    for (int i=0; i<Nksim; ++i) {
+             std::string ssigperN;
+             getline(sigperN,ssigperN);
+               std::istringstream(ssigperN) >> rsigperpsim[i] >> sigperpsim[i] >> dum[i] >> dum[i];
               //std::cout << sigperpsim[i] << std::endl; 
-   // }
-   // sigperN.close();
+    }
+    sigperN.close();
     //And spline the new functions
-   // sigperpsimspl.init(rsigperpsim,sigperpsim);
+    sigperpsimspl.init(rsigperpsim,sigperpsim);
 }
 
 double
