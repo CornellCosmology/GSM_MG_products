@@ -2271,6 +2271,7 @@ LSM::init(const char fname[], const double f,
     // Set up the Zel'dovich class.
     Zeldovich::init(fname);
     // Initialize the LPT class with our newly populated kLin/pLin.
+    std::cout << 600 << std::endl;
     lpt.init(kLin,pLin);
     //std::cout << kLin[0] << std::endl;
     // We can now set up the "extra" functions we need.  Check
