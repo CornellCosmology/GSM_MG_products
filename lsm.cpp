@@ -978,7 +978,7 @@ LSM::setupQR(const char fname[]) {
       getline(fsQ,ssQ);
                //std::istringstream(ssQ) >> ka[i] >> Q1[i] >> Q2[i] >> Q3[i] >> Q5[i] >> Q8[i] >> Qs[i];  
                std::istringstream(ssQ) >> ka[i] >> Q1[i] >> Q2[i] >> Q3[i] >> Q5[i] >> Q8[i] >> Qs[i] >> QI[i] >> Q7[i] >> Q9[i] >> Q11[i] >> Q12[i] >> Q13[i];                          
-               //std::cout << QI[i] << std::endl;
+               std::cout << Q1[i] << std::endl;
     }
     fsQ.close();
     // std::cout << NkTemp << std::endl;
