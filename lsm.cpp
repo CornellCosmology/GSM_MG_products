@@ -965,7 +965,7 @@ LSM::setupQR(const char fname[]) {
     //Q12spl.init(ka,Q12);
     //Q13spl.init(ka,Q13);
 
-    std::ifstream fsQ("plin_Fr6z05wmap9_cleftQnew_z000.txt");
+    std::ifstream fsQ("ppppplin_Fr6z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_Fr5z05wmap9_cleftQnew_z000.txt");
     //std::ifstream fsQ("./ps_python3/plin_N1z05wmap9_cleftQ0_z000.txt");
     //std::ifstream fsQ("./Q_zeros.txt");
