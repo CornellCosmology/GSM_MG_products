@@ -58,7 +58,7 @@ The input files for this evaluation are provided, with the following names
 3) plin_Fr6z05wmap9_Q.txt, plin_Fr6z05wmap9_R.txt
 4) plin_Fr6z05wmap9_QDer.txt, plin_Fr6z05wmap9_RDer.txt
 
-The inputs and outputs for the rest of the models in G.Valogiannis, R. Bean and A. Aviles (2020 are also provided.
+The inputs and outputs for the rest of the models in G.Valogiannis, R. Bean and A. Aviles (2020) are also provided.
 
 
 
