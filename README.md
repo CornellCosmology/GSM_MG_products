@@ -28,16 +28,16 @@ The code reads (2)-(4) in the subroutine setupQR of lsm.cpp.
 How to compile and run:
 
 After compiling with 'make' in the main directory, the executable 'lesm' is produced, which can be called as:
-./lesm <Pk-file> <ff> <b1> <b2> <bs2> <Aeft> <Aeftv> <s2FoG> <ngrav> 
+./lesm Pk-file ff b1 b2 bs2 Aeft Aeftv s2FoG ngrav 
 where
-<Pk-file> is MG linear power spectrum from 1)
-<ff> is the GR linear growth rate for the given z
-<b1> is the linear Lagrangian bias
-<b2> is the 2nd order Lagrangian bias
-<bs2> is the tidal bias -> currently not used set = 0
-<Aeft>, <Aeftv> are EFT corrections -> currently not used set = 0
-<s2FoG> is the EFT-insipred Fingers-Of-God offset corrections to the velocity dispersion, and 
-<ngrav> the gravity model, =0 for GR and =1 for MG.
+1) Pk-file is MG linear power spectrum from 1)
+2) ff is the GR linear growth rate for the given z
+3) b1 is the linear Lagrangian bias
+4) b2 is the 2nd order Lagrangian bias
+5) bs2 is the tidal bias -> currently not used set = 0
+6) Aeft, <Aeftv> are EFT corrections -> currently not used set = 0
+7) s2FoG is the EFT-insipred Fingers-Of-God offset corrections to the velocity dispersion, and 
+8) ngrav the gravity model, =0 for GR and =1 for MG.
 
 Output description:
 
