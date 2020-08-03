@@ -43,7 +43,7 @@ Output description:
 
 The code produces a file named 'xi0GSM_<Pk-file>', which contains the monopole, \xi_0, quadrupole, \xi_2 and hexadecapole \xi_4 of the RSD correlation function at a given separation s, in the following format:
 
-#1          #2             #3             #4
+1            2               3               4
 s            s^2*\xi_0  s^2*\xi_2   s^2*\xi_4
 
 As an example, for the Fr6 model at z=0.5, which is one of the results shown in G.Valogiannis, R. Bean and A. Aviles (2020), 
