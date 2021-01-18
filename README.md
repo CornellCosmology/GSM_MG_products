@@ -10,6 +10,8 @@ G.Valogiannis and R. Bean (2019), https://arxiv.org/abs/1901.03763
 
 the codes for which have been separately released publicly in https://github.com/CornellCosmology/bias_MG_LPT_products . 
 
+If you use this work for your research, please cite the above papers.
+
 The codes are the MG expansions of the original GR versions developed in https://github.com/martinjameswhite/CLEFT_GSM , for 
 calculating the various ingredients of the Gaussian Streaming Model (GSM) using EFT corrections to CLPT.
 Note, however, that the MG version presented here Only produces predictions for biased tracers using a local-in-density Lagrangian bias, with an EFT-inspired correction only to the velocity dispersion.
@@ -53,11 +55,15 @@ which reproduces the results of the paper in the file 'xi0GSM_plin_Fr6z05wmap9.t
 
 The input files for this evaluation are provided, with the following names
 1) plin_Fr6z05wmap9.txt
-2) fgrowth_Fr6z05wmap9.txt
-3) plin_Fr6z05wmap9_Q.txt, plin_Fr6z05wmap9_R.txt
-4) plin_Fr6z05wmap9_QDer.txt, plin_Fr6z05wmap9_RDer.txt
+2) fgrowth_plin_Fr6z05wmap9.txt
+3) Qn_plin_Fr6z05wmap9.txt, Rn_plin_Fr6z05wmap9.txt
+4) Qndot_plin_Fr6z05wmap9.txt, Rndot_plin_Fr6z05wmap9.txt
 
-The inputs and outputs for the rest of the models in G.Valogiannis, R. Bean and A. Aviles (2020) are also provided.
+The inputs and outputs for the rest of the models in G.Valogiannis, R. Bean and A. Aviles (2020) are also provided, following the naming scheme above, and replacing the model number (eg. Fr5 or N5 instead of Fr6 above).
+
+For any questions on how to use the code and interpet its outputs, please contact @gvalogia . 
+
+
 
 
 
