@@ -994,7 +994,13 @@ LSM::setupQR(const char fname[]) {
     Qsspl.init(ka,Qs);
     QIspl.init(ka,QI);
     
-    std::ifstream fsR("plin_Fr6z05wmap9_R.txt");
+    
+    std::stringstream sks;
+    skR<<"Rn_"<< fname;
+    
+    std::ifstream fsR(skR.str().c_str());
+    
+    //std::ifstream fsR("plin_Fr6z05wmap9_R.txt");
     //std::ifstream fsR("./ps_python3/plin_Fr5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N5z05wmap9_cleftRnew_z000.txt");
     //std::ifstream fsR("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
@@ -1024,7 +1030,14 @@ LSM::setupQR(const char fname[]) {
     std::vector<double> Q1prime(NkTemp),Q2prime(NkTemp),Q5prime(NkTemp),Q8prime(NkTemp),Q3prime(NkTemp);
     std::vector<double> Qsprime(NkTemp),QIprime(NkTemp),R12prime(NkTemp),RIprime(NkTemp), Q1halfprime(NkTemp) ;   
     //std::ifstream fsQder("./ps_python3/plin_N5z05wmap9_cleftQnewDer_z000.txt");
-    std::ifstream fsQder("plin_Fr6z05wmap9_QDer.txt");
+    
+    
+    std::stringstream skq;
+    skq<<"Qndot_"<< fname;
+    
+    std::ifstream fsQder(skq.str().c_str());
+    
+    //std::ifstream fsQder("plin_Fr6z05wmap9_QDer.txt");
     //std::ifstream fsQder("./ps_python3/plin_Fr5z05wmap9_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_Fr5z1planck_cleftQnewDer_z000.txt");
     //std::ifstream fsQder("./ps_python3/plin_N1z05wmap9_cleftQ0_z000.txt");
@@ -1051,8 +1064,15 @@ LSM::setupQR(const char fname[]) {
     QIprimespl.init(kaprime,QIprime);
     Q1halfprimespl.init(kaprime,Q1halfprime);
 
-    //std::ifstream fsRder("./ps_python3/plin_N5z05wmap9_cleftRnewDer_z000.txt");    
-    std::ifstream fsRder("plin_Fr6z05wmap9_RDer.txt");
+    //std::ifstream fsRder("./ps_python3/plin_N5z05wmap9_cleftRnewDer_z000.txt");
+    
+    
+    std::stringstream skq;
+    skrdot<<"Rndot_"<< fname;
+    
+    std::ifstream fsRder(skrdot.str().c_str());
+    
+    //std::ifstream fsRder("plin_Fr6z05wmap9_RDer.txt");
     //std::ifstream fsRder("./ps_python3/plin_Fr5z05wmap9_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_Fr5z1planck_cleftRnewDer_z000.txt");
     //std::ifstream fsRder("./ps_python3/plin_N1z05wmap9_cleftR0_z000.txt");
