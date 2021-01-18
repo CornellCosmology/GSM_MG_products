@@ -995,7 +995,7 @@ LSM::setupQR(const char fname[]) {
     QIspl.init(ka,QI);
     
     
-    std::stringstream sks;
+    std::stringstream skR;
     skR<<"Rn_"<< fname;
     
     std::ifstream fsR(skR.str().c_str());
@@ -1067,7 +1067,7 @@ LSM::setupQR(const char fname[]) {
     //std::ifstream fsRder("./ps_python3/plin_N5z05wmap9_cleftRnewDer_z000.txt");
     
     
-    std::stringstream skq;
+    std::stringstream skrdot;
     skrdot<<"Rndot_"<< fname;
     
     std::ifstream fsRder(skrdot.str().c_str());
