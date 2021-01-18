@@ -1068,14 +1068,14 @@ LSM::setupQR(const char fname[]) {
     RIprimespl.init(kaRprime,RIprime);
 
     //std::ifstream grth("./fgrowth_N5z05wmap9.txt");
-    std::ifstream grth("fgrowth_Fr6z05wmap9.txt");
+    //std::ifstream grth("fgrowth_Fr6z05wmap9.txt");
     //std::ifstream grth("./fgrowth_Fr5z05wmap9.txt");
     //std::ifstream grth("./fgrowth_Fr5z1planck.txt");
 
-    //std::stringstream ss;
-    //ss<<"fgrowth_"<< fname;
+    std::stringstream ss;
+    ss<<"fgrowth_"<< fname;
     
-    //std::ifstream grth(ss.str().c_str());
+    std::ifstream grth(ss.str().c_str());
 
     const int NkTempgrowth=2000;
     std::vector<double> kgrowth(NkTempgrowth), fgrowth(NkTempgrowth);
